@@ -1,6 +1,5 @@
 const userModel = require('../Model/user');
 const jwt = require('jsonwebtoken');
-require('dotenv').config();
 
 const handleRefreshToken = async ( req, res ) => {
     //get cookie from req

@@ -10,7 +10,7 @@ const handleLogin = async (req, res) => {
     if(!email || !password) res.status(400).json({message: 'email and password required'})
 
     //checking if user exists
-    const user = await userModel.findOne({email: email}).exec();
+    const user = await userModel.findOne({email}).exec();
     if(!user) res.sendStatus(401);
 
     //evaluating password
@@ -39,8 +39,7 @@ const handleLogin = async (req, res) => {
 
         //save refresh token for current user
         user.refreshToken = refreshToken;
-        const result = await user.save();
-        console.log(result);
+        await user.save();
         //res.cookie and send accesstoken with json
         res.cookie("jwt", refreshToken, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 }); //add secure: true and samesite: 'none' for development
         res.json({success: `${user.firstName} ${user.lastName} signed in`, accessToken})

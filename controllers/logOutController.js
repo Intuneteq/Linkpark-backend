@@ -6,8 +6,8 @@ const handleLogOut = async (req, res) => {
     //Also delete cookie in frontend
 
     //Get cookie from req
-    const cookie = req.cookie;
-    if(!cookie?.jwt) return res.sendStatus(204);  //No content so good to go
+    const cookies = req.cookies;
+    if(!cookies?.jwt) return res.sendStatus(204);  //No content so good to go
 
     //if access token found set it as refresh token
     const refreshToken = cookies.jwt;
@@ -23,8 +23,7 @@ const handleLogOut = async (req, res) => {
 
     //if user is found we need to delete refreshToken from dataabase 
     foundUser.refreshToken = '';
-    const result = await foundUser.save();
-    console.log(result);
+    await foundUser.save();
 
     res.clearCookie('jwt', { httpOnly: true });  //use sameSite: 'None', secure: true for deployment
     return res.sendStatus(204);
