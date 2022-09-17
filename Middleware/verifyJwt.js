@@ -18,6 +18,7 @@ const verifyJwt = async (req, res, next) => {
         (err, decoded) => {
             if(err) return res.sendStatus(403); //invalid token
             req.email = decoded.email;
+            req.roles = decoded.UserInfo.roles;
             next();
         }
     )

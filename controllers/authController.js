@@ -16,10 +16,16 @@ const handleLogin = async (req, res) => {
     //evaluating password
     const match = await bcrypt.compare(password, user.password);
     if(match) {
+        const roles = Object.values(user.roles).filter(Boolean);
 
         //create accesstoken using jwt
         const accessToken = jwt.sign(
-            {email: user.email},
+            {
+                "userInfo": {
+                    email: user.email,
+                    roles: roles
+                }
+            },
             process.env.ACCESS_TOKEN_SECRET,
             {expiresIn: '300s'}
         )
