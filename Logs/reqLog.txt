@@ -113,3 +113,6 @@
 20220917	10:24:00	5c203674-2f98-42da-b57c-99edaa09f242	GET	undefined	/api/users
 20220917	10:24:12	7b9ef08a-48f3-4ea0-b11d-6127d6bf0513	GET	undefined	/api/users
 20220917	10:24:25	728b0e8d-2586-4a25-a927-ac87cd11b9cc	GET	undefined	/api/users/63258520f158e5948ce7f322/
+20220917	11:12:44	9e0c3d45-e0aa-4a36-89dc-31700ed1f308	GET	undefined	/
+20220917	11:12:45	4a136715-7deb-4b0b-b1bb-d144f84ea40d	GET	undefined	/css/style.css
+20220917	11:12:45	347c56c5-a62b-4587-aa7a-31bec859471f	GET	undefined	/favicon.ico
