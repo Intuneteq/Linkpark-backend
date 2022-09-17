@@ -41,7 +41,7 @@ const handleLogin = async (req, res) => {
         user.refreshToken = refreshToken;
         await user.save();
         //res.cookie and send accesstoken with json
-        res.cookie("jwt", refreshToken, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 }); //add secure: true and samesite: 'none' for development
+        res.cookie("jwt", refreshToken, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000, secure: true, samesite: 'none' }); //add secure: true and samesite: 'none' for development
         res.json({success: `${user.firstName} ${user.lastName} signed in`, accessToken})
     } else {
         res.sendStatus(401);
