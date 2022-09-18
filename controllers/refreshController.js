@@ -13,10 +13,10 @@ const handleRefreshToken = async ( req, res ) => {
 
     //compare refresh token in cookies with that in the database
     const foundUser = await userModel.findOne({ refreshToken }).exec();
-    if (!foundUser) return res.sendStatus(403); //Forbidden 
+    if (!foundUser) return res.status(403); //Forbidden 
 
     //if refreshToken doesn't match
-    if(!foundUser) return res.sendStatus(403); //forbidden
+    if(!foundUser) return res.status(403); //forbidden
 
     //if refreshToken match, evaluate jwt and issue another access token
     jwt.verify(
@@ -24,7 +24,7 @@ const handleRefreshToken = async ( req, res ) => {
         process.env.REFRESH_TOKEN_SECRET,
         (err, decoded) => {
             //making sure email from the user with refreshtoken matches the email with refreshtoken of DB
-            if (err || foundUser.email !== decoded.email) return res.sendStatus(403); //forbidden
+            if (err || foundUser.email !== decoded.email) return res.status(403); //forbidden
             const roles = Object.values(foundUser.roles);
             
             //if all is right, sign user in and issue another accesstoken using jwt

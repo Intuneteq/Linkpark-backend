@@ -7,7 +7,7 @@ const handleLogOut = async (req, res) => {
 
     //Get cookie from req
     const cookies = req.cookies;
-    if(!cookies?.jwt) return res.sendStatus(204);  //No content so good to go
+    if(!cookies?.jwt) return res.status(204);  //No content so good to go
 
     //if access token found set it as refresh token
     const refreshToken = cookies.jwt;
@@ -18,7 +18,7 @@ const handleLogOut = async (req, res) => {
     //if user is not found return a 204, delete cookie and logout user
     if(!foundUser) {
         res.clearCookie('jwt', { httpOnly: true });  //use sameSite: 'None', secure: true for deployment
-        return res.sendStatus(204);
+        return res.status(204);
     }
 
     //if user is found we need to delete refreshToken from dataabase 
@@ -26,7 +26,7 @@ const handleLogOut = async (req, res) => {
     await foundUser.save();
 
     res.clearCookie('jwt', { httpOnly: true, sameSite: 'None', secure: true });  //use sameSite: 'None', secure: true for deployment
-    return res.sendStatus(204);
+    return res.status(204);
 }
 
 module.exports ={handleLogOut};

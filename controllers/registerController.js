@@ -30,7 +30,7 @@ const handleNewUser = async (req, res) => {
 
   const duplicate = await userModel.findOne({ email }).exec();
 
-  if (duplicate) res.sendStatus(409).json({ message: "user already exist" });
+  if (duplicate) return res.status(409).json({ message: "user already exist" });
 
   try {
     const hashedPwd = await bcrypt.hash(password, 10);
@@ -50,7 +50,7 @@ const handleNewUser = async (req, res) => {
       .status(201)
       .json({ success: `New user ${firstName} ${lastName} created!` });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+     return res.status(500).json({ message: error.message });
   }
 };
 
