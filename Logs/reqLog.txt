@@ -204,3 +204,12 @@
 20220918	06:51:52	8c6015b3-f44d-43ad-b285-63632132e030	POST	http://localhost:3000	/api/auth
 20220918	07:21:05	01b824b2-cfc2-4e39-9566-0a1e3a74503c	OPTIONS	http://localhost:3000	/api/auth
 20220918	07:21:05	d6add199-67ef-4c3f-8798-c715a1c090df	POST	http://localhost:3000	/api/auth
+20220918	09:50:36	c62d2592-e8c4-4253-ada3-9cb09e0c144e	GET	undefined	/
+20220918	09:50:36	ec4540b7-ad7b-48fc-b3e8-d9f374740c28	GET	undefined	/favicon.ico
+20220918	09:50:38	ae19ebaa-7b6c-43cd-b177-41fa01f7d6b9	GET	undefined	/
+20220918	09:50:38	394022ca-680f-417a-be1a-cfbe944e82e3	GET	undefined	/favicon.ico
+20220918	09:50:40	055d0a71-d85d-4bf5-914f-b1effc0ec3c6	GET	undefined	/
+20220918	09:50:40	39455718-d513-45fe-b315-faa731ce1327	GET	undefined	/favicon.ico
+20220918	09:51:32	2a97c607-8587-4884-8a82-cc7ea6ec5a64	GET	undefined	/
+20220918	09:51:32	02aebefa-887d-43ce-b1ce-ab0cf326e591	GET	undefined	/css/style.css
+20220918	09:51:33	0574a4b3-9ec2-4268-be63-b2bb663ccd8d	GET	undefined	/favicon.ico
