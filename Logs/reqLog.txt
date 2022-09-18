@@ -202,3 +202,5 @@
 20220918	06:51:09	4058e28f-be32-4a58-a93d-a79c200dfa88	POST	http://localhost:3000	/api/auth
 20220918	06:51:52	4cf13bc4-03e5-4be4-a234-5b739dc0c979	OPTIONS	http://localhost:3000	/api/auth
 20220918	06:51:52	8c6015b3-f44d-43ad-b285-63632132e030	POST	http://localhost:3000	/api/auth
+20220918	07:21:05	01b824b2-cfc2-4e39-9566-0a1e3a74503c	OPTIONS	http://localhost:3000	/api/auth
+20220918	07:21:05	d6add199-67ef-4c3f-8798-c715a1c090df	POST	http://localhost:3000	/api/auth
