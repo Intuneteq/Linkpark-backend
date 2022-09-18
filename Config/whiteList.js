@@ -1,5 +1,5 @@
 const whiteList = [
-    // 'https://www.yoursite.com',
+    'https://frabjous-liger-4fc484.netlify.app',
     'http://localhost:3500',
     'http://localhost:3000'
 ];
