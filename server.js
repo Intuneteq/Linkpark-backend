@@ -7,6 +7,8 @@ const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 const corsOptions = require('./config/corsOptions');
 const errorHandler = require('./middleware/errorHandler');
+const compression = require("compression");
+const helmet = require("helmet");
 const { logger } = require('./middleware/logEvents');
 const credentials = require('./middleware/credentials');
 const verifyJWT = require('./middleware/verifyJwt');
@@ -24,9 +26,13 @@ app.use(cors(corsOptions));
 
 app.use(express.urlencoded({ extended: false }));
 
+app.use(helmet());  //helps send necessary headers with request and response
+
 app.use(express.json());
 
 app.use(cookieParser());
+
+app.use(compression()); //compress routes for public server
 
 app.use('/', express.static(path.join(__dirname, '/public')));
 

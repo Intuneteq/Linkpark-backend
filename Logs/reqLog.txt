@@ -196,3 +196,9 @@
 20220918	06:15:17	92d47c46-b0d1-424f-90cb-d9ef75fa7b72	POST	http://localhost:3000	/api/auth
 20220918	06:19:57	fd3fdccd-410f-4df0-b228-3c7ce4ef8594	OPTIONS	http://localhost:3000	/api/auth
 20220918	06:19:57	c88aaf1a-d963-4089-a35d-90d86e11d3e2	POST	http://localhost:3000	/api/auth
+20220918	06:49:46	329a265a-6fd5-440a-82a8-f0c068911a01	OPTIONS	http://localhost:3000	/api/auth
+20220918	06:49:47	23f2502a-3c79-41f0-abfc-4c234ebae5aa	POST	http://localhost:3000	/api/auth
+20220918	06:51:09	c50db286-0e2b-4463-9ebc-aac571cb4628	OPTIONS	http://localhost:3000	/api/auth
+20220918	06:51:09	4058e28f-be32-4a58-a93d-a79c200dfa88	POST	http://localhost:3000	/api/auth
+20220918	06:51:52	4cf13bc4-03e5-4be4-a234-5b739dc0c979	OPTIONS	http://localhost:3000	/api/auth
+20220918	06:51:52	8c6015b3-f44d-43ad-b285-63632132e030	POST	http://localhost:3000	/api/auth
