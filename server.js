@@ -6,7 +6,7 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 const {corsOptions} = require('./Config/corsOptions');
-const {errorHandler} = require('./middleware/errorHandler');
+// const {errorHandler} = require('./middleware/errorHandler');
 const compression = require("compression");
 const helmet = require("helmet");
 const { logger } = require('./middleware/logEvents');
@@ -58,7 +58,7 @@ app.all('*', (req, res) => {
 });
 
 
-app.use(errorHandler);
+// app.use(errorHandler);
 
 mongoose.connection.once('open', ()=> {
     console.log('Connected to DB')
