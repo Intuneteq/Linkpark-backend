@@ -17,12 +17,14 @@ const handleLogOut = async (req, res) => {
     
     //if user is not found return a 204, delete cookie and logout user
     if(!foundUser) {
-        res.clearCookie('jwt', { httpOnly: true });  //use sameSite: 'None', secure: true for deployment
+        res.clearCookie('jwt', { httpOnly: true, sameSite: 'None', secure: true });  //use sameSite: 'None', secure: true for deployment
         return res.status(204);
     }
 
     //if user is found we need to delete refreshToken from dataabase 
-    foundUser.refreshToken = '';
+    foundUser.refreshToken = foundUser.refreshToken.filter(
+        (rt) => rt !== refreshToken
+      );
     await foundUser.save();
 
     res.clearCookie('jwt', { httpOnly: true, sameSite: 'None', secure: true });  //use sameSite: 'None', secure: true for deployment
