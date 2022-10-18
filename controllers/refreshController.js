@@ -88,7 +88,7 @@ const handleRefreshToken = async (req, res) => {
         httpOnly: true,
         maxAge: 24 * 60 * 60 * 1000,
         secure: true,
-        samesite: "none",
+        sameSite: "None",
       }); //add secure: true and samesite: 'none' for development
 
       res.json({ accessToken, userInfo });
